@@ -3,7 +3,7 @@
 - type: tech
 - size: M
 - branch: tech/002-npm-installer
-- stage: 04-backend
+- stage: 06-review-complete
 - legacy: none
 - epic: installer
 - gates: gate-3
@@ -30,3 +30,4 @@ gate-3: pending
 
 ## Notes
 
+- 2026-08-31 [orchestrator] node engine done, verify OK; stacked on tech-001; awaiting gate-3
