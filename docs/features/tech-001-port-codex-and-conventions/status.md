@@ -3,7 +3,7 @@
 - type: tech
 - size: M
 - branch: tech/001-port-codex-and-conventions
-- stage: 04-backend
+- stage: 06-review-complete
 - legacy: none
 - epic: content
 - gates: gate-3
@@ -33,4 +33,4 @@ gate-3: pending
   runtime-кода в репозитории нет); gate-3 остаётся за человеком
 
 ## Notes
-
+- 2026-08-31 [orchestrator] port done, verify OK (incl. adapters, self-sync); awaiting gate-3
