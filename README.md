@@ -34,8 +34,13 @@ python usai-workflow/install.py --list       # список модулей
 1. Заполните слоты `<...>` в `AGENTS.md` — описание проекта, стек, команды,
    каталог legacy-системы (если есть).
 2. Объявите проверки проекта в `scripts/verify.config.sh`.
-3. Напишите `docs/conventions/{backend,frontend,git}.md` под свой стек —
-   пайплайн ссылается на них как на источник правил кода.
+3. Заполните заготовки `docs/conventions/{backend,frontend}.md` под свой
+   стек (git.md уже пригоден как есть) — пайплайн ссылается на них как на
+   источник правил кода.
+4. Включите git-хуки: `git config core.hooksPath .githooks` (pre-commit —
+   защита main и формат ветки, commit-msg — формат заголовка, pre-push —
+   `scripts/verify.sh`).
+5. Проверьте согласованность адаптеров: `python scripts/validate-ai-workflow.py`.
 
 ## Что внутри
 
@@ -43,6 +48,7 @@ python usai-workflow/install.py --list       # список модулей
 |---------|---------|
 | `core/` | Ядро (ставится всегда): `docs/ai-workflow/` — пайплайн, роутинг, этапы; `docs/features/README.md` — формат задач и `status.md`; `docs/adr/` + шаблоны артефактов; `scripts/` — new-task, backlog, verify (+ PowerShell-обёртки) |
 | `modules/adapter-claude/` | Адаптер Claude Code: `/feature` и команды этапов, субагенты ролей с уровнями моделей, PreToolUse-хук против широкого поиска по диску (94 оффлайн-теста) |
+| `modules/adapter-codex/` | Адаптер Codex: skill `$feature`, профили ролей `.codex/agents`, hook с той же policy (Windows-адаптер + тесты). Требует adapter-claude |
 | `install.py` | Движок установки — модулей не знает, читает их манифесты |
 
 Суть процесса (подробно — `core/files/docs/ai-workflow/README.md`):
@@ -72,13 +78,9 @@ modules/<id>/
 
 ## Дорожная карта
 
-- `install.py update` — пересинхронизация файлов ядра по lock-файлу.
-- `adapter-codex` — профили ролей и хук для Codex.
-- Stack-модули (`backend-dotnet`, `frontend-react`, …): конвенции,
-  ADR-пресеты, строки verify.config.
-- verify v2: классификация изменённых файлов и запуск только осмысленных
-  проверок (движок есть в проекте-источнике, требует адаптации).
-- Английская локализация ядра.
+Очередь задач — [docs/backlog.md](docs/backlog.md). Крупное: `install.py
+update`, stack-модули с ADR-пресетами, verify v2 (запуск проверок по классу
+изменённых файлов), CI, английская локализация ядра.
 
 Язык артефактов — русский (осознанное решение проекта-источника; язык — слот
 `AGENTS.md`, самим документам локализация в планах).

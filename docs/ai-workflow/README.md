@@ -107,7 +107,13 @@ flowchart TD
 его: изменение общего маршрута делается один раз в `feature.md` и сразу
 действует для всех вендоров. Таблица выше описывает полный набор адаптеров;
 в проекте присутствуют те, что установлены соответствующими модулями
-usai-workflow.
+usai-workflow. Согласованность установленных адаптеров с таблицей ролей
+routing.md проверяет `scripts/validate-ai-workflow.py`.
+
+Codex hook в `.codex/hooks.json` использует ту же policy, что Claude Code:
+`.claude/hooks/block_wide_fs_search.py`. После клонирования или изменения
+hook его нужно просмотреть и доверить через `/hooks`; без trust Codex
+пропускает project-local hook.
 
 POSIX entrypoints остаются источником поведения скриптов. В PowerShell те же
 команды запускаются через Git for Windows Bash без копирования логики:

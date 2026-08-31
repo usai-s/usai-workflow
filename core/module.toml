@@ -8,5 +8,8 @@ requires = []
 seed = [
   "AGENTS.md",
   "docs/backlog.md",
+  "docs/conventions/git.md",
+  "docs/conventions/backend.md",
+  "docs/conventions/frontend.md",
   "scripts/verify.config.sh",
 ]
