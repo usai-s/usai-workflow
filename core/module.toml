@@ -1,0 +1,12 @@
+id = "core"
+title = "Ядро AI workflow"
+description = "Пайплайн, роутинг F/S/M/L, human gates, status.md, шаблоны артефактов, скрипты new-task/backlog/verify. Ставится всегда."
+always = true
+requires = []
+# Проектные заготовки: создаются только если файла ещё нет, существующие
+# не перезаписываются и update их не трогает.
+seed = [
+  "AGENTS.md",
+  "docs/backlog.md",
+  "scripts/verify.config.sh",
+]

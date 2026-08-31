@@ -1,0 +1,103 @@
+# Оффлайн-таблица для .claude/hooks/tests/run_cases.py.
+# Колонки через TAB: expect(BLOCK|ALLOW)  tool_name(Bash|PowerShell)  cwd  command
+# cwd:  PROJ  = /c/Users/dev/Workspace/example-project
+#       ROOT  = /
+#       HOME  = /c/Users/dev
+#       SUBDIR= PROJ/src
+# (подставляются в run_cases.py; CWD_VALUES ниже — реальный путь текущего
+# пользователя этой машины, тот же самый, что уже виден в путях остального
+# репозитория, не отдельная утечка).
+BLOCK	Bash	PROJ	find /
+BLOCK	Bash	PROJ	find / -name nosuchfile
+BLOCK	Bash	PROJ	find -L / -name nosuchfile
+BLOCK	Bash	PROJ	find /c -name x
+BLOCK	Bash	PROJ	find /c/ -name x
+BLOCK	Bash	PROJ	find /c/Users -iname 'Npgsql*'
+BLOCK	Bash	PROJ	find /c/Users/dev -iname x
+BLOCK	Bash	PROJ	find ~ -iname x
+BLOCK	Bash	PROJ	cd / && find . -name x
+BLOCK	Bash	PROJ	cd /c/Users && find . -name x
+BLOCK	Bash	PROJ	find "/" -name x
+BLOCK	Bash	PROJ	find '/' -name x
+BLOCK	Bash	PROJ	rg --files /
+BLOCK	Bash	PROJ	rg --files /c/Users
+BLOCK	Bash	PROJ	grep -r pattern /c/
+BLOCK	Bash	PROJ	grep -R pattern /
+BLOCK	Bash	PROJ	grep -r -e pattern /c/
+BLOCK	Bash	PROJ	ls -R /c/
+BLOCK	Bash	PROJ	ls -R /c/Users
+BLOCK	Bash	PROJ	du -a /c/
+BLOCK	Bash	PROJ	du -sh /
+BLOCK	Bash	PROJ	sudo find / -name x
+BLOCK	Bash	PROJ	timeout 2 find / -name nosuchfile
+BLOCK	Bash	PROJ	cd ~ && find . -name x
+BLOCK	Bash	PROJ	find /c/users -iname x
+BLOCK	Bash	PROJ	find /c/Users/ -iname x
+BLOCK	Bash	PROJ	tree /c/Users
+BLOCK	Bash	PROJ	find /c/Users/Public -iname x
+BLOCK	Bash	ROOT	find -name x
+BLOCK	Bash	HOME	find -name x
+BLOCK	PowerShell	PROJ	Get-ChildItem -Path C:\ -Filter *.dll -Recurse
+BLOCK	PowerShell	PROJ	Get-ChildItem C:\ -Recurse
+BLOCK	PowerShell	PROJ	gci C:\ -Recurse
+BLOCK	PowerShell	PROJ	ls C:\ -Recurse
+BLOCK	PowerShell	PROJ	Get-ChildItem -LiteralPath C:\ -Recurse
+BLOCK	PowerShell	PROJ	Get-ChildItem -Recurse -Path C:/
+BLOCK	PowerShell	PROJ	dir /s C:\
+BLOCK	PowerShell	PROJ	Get-ChildItem -Recurse C:\Users
+BLOCK	Bash	PROJ	sudo -n find / -name x
+BLOCK	Bash	PROJ	sudo -u root find / -name x
+BLOCK	Bash	PROJ	sudo -H find / -name x
+BLOCK	Bash	PROJ	nice -n 10 find / -name x
+BLOCK	Bash	PROJ	env -i find / -name x
+BLOCK	Bash	PROJ	find $HOME -iname 'Npgsql*'
+BLOCK	Bash	PROJ	find ${HOME}/ -iname 'Npgsql*'
+BLOCK	Bash	PROJ	find $USERPROFILE -iname x
+BLOCK	PowerShell	PROJ	Get-ChildItem $env:USERPROFILE -Recurse
+BLOCK	Bash	PROJ	(find / -name x)
+BLOCK	Bash	PROJ	{ find / -name x; }
+BLOCK	Bash	PROJ	x=$(find / -name x)
+BLOCK	Bash	PROJ	echo $(find / -name x)
+BLOCK	Bash	PROJ	pushd / && find . -name x
+BLOCK	Bash	PROJ	bash -c 'find / -name x'
+BLOCK	Bash	PROJ	sh -c 'find / -name x'
+BLOCK	Bash	PROJ	xargs -I{} find / -name {}
+BLOCK	Bash	PROJ	find /d -name x
+BLOCK	Bash	PROJ	find /d/Users -iname x
+BLOCK	PowerShell	PROJ	Get-ChildItem D:\ -Recurse
+BLOCK	Bash	PROJ	find / -maxdepth 2 -name x
+ALLOW	Bash	PROJ	find src -name '*.cs'
+ALLOW	Bash	PROJ	find . -name '*.md'
+ALLOW	Bash	PROJ	find /c/Users/dev/.nuget/packages -maxdepth 1 -name 'Npgsql*'
+ALLOW	Bash	PROJ	find ~/.nuget/packages -maxdepth 1 -name 'Npgsql*'
+ALLOW	Bash	PROJ	grep -r pattern src/
+ALLOW	Bash	PROJ	rg pattern src
+ALLOW	Bash	PROJ	rg pattern
+ALLOW	Bash	PROJ	ls -la /c/Users/dev/Workspace
+ALLOW	PowerShell	PROJ	Get-ChildItem -Path C:\Users\dev\.nuget\packages -Recurse -Filter Npgsql*
+ALLOW	Bash	PROJ	find /c/Users/dev/Workspace/example-project -name '*.cs'
+ALLOW	Bash	PROJ	du -sh src/
+ALLOW	Bash	PROJ	cd src && find . -name '*.cs'
+ALLOW	Bash	PROJ	echo hello && find . -name x
+ALLOW	Bash	PROJ	git commit -m "find / is dangerous, do not run it"
+ALLOW	Bash	PROJ	find . -path '*/bin/*' -prune -o -name '*.cs' -print
+ALLOW	Bash	PROJ	ls -la
+ALLOW	PowerShell	PROJ	Get-ChildItem
+ALLOW	Bash	SUBDIR	find -name x
+ALLOW	PowerShell	PROJ	Get-ChildItem -Path C:\Users\dev\Workspace -Recurse
+ALLOW	Bash	PROJ	sudo -n echo hi
+ALLOW	Bash	PROJ	nice -n 5 ls -la
+ALLOW	Bash	PROJ	env -i ls -la
+ALLOW	Bash	PROJ	bash -c 'echo hi'
+ALLOW	Bash	PROJ	sh -c "find src -name '*.cs'"
+ALLOW	Bash	PROJ	(cd src && find . -name x)
+ALLOW	Bash	PROJ	x=$(find src -name '*.cs')
+ALLOW	Bash	PROJ	xargs -n 1 echo hi
+ALLOW	Bash	PROJ	find $HOME/.nuget/packages -maxdepth 1 -name 'Npgsql*'
+ALLOW	Bash	PROJ	pushd src && find . -name x
+ALLOW	PowerShell	PROJ	Get-ChildItem -Recurse .\src
+ALLOW	PowerShell	PROJ	dir /s src
+ALLOW	PowerShell	PROJ	Get-ChildItem $env:USERPROFILE\Workspace -Recurse
+ALLOW	Bash	PROJ	find / -maxdepth 1
+ALLOW	Bash	PROJ	find / -maxdepth 0 -name nosuchfile
+ALLOW	Bash	PROJ	find /c/Users -maxdepth 1 -name x
