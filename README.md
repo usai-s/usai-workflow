@@ -8,21 +8,25 @@
 
 ## Установка
 
-Требуется Python ≥ 3.11 (только стандартная библиотека).
+Требуется Node.js ≥ 18 (установщик без зависимостей). Python ≥ 3.11 нужен
+не установщику, а части устанавливаемого контента (PreToolUse-хук,
+validate-ai-workflow.py).
 
 ```bash
-git clone https://github.com/usai-s/usai-workflow.git
-python usai-workflow/install.py --target /путь/к/вашему/проекту
+npx github:usai-s/usai-workflow --target /путь/к/вашему/проекту
 ```
 
 Установщик спросит, какие модули ставить, скопирует файлы и запишет
 `.usai-workflow.lock` (версия + модули + sha256 файлов). Без вопросов:
 
 ```bash
-python usai-workflow/install.py --target /путь/к/проекту --all --yes
-python usai-workflow/install.py --target /путь/к/проекту --modules adapter-claude --yes
-python usai-workflow/install.py --list       # список модулей
+npx github:usai-s/usai-workflow --target /путь/к/проекту --all --yes
+npx github:usai-s/usai-workflow --target /путь/к/проекту --modules adapter-claude --yes
+npx github:usai-s/usai-workflow --list       # список модулей
 ```
+
+После публикации пакета в npm registry (`npm publish`) то же самое — просто
+`npx usai-workflow ...`. Из клона: `node bin/usai.js ...`.
 
 Существующий файл с другим содержимым останавливает установку до первой
 записи; `--force` перезаписывает. **Seed-файлы** (`AGENTS.md`, `CLAUDE.md`,
@@ -42,6 +46,8 @@ python usai-workflow/install.py --list       # список модулей
    `scripts/verify.sh`).
 5. Проверьте согласованность адаптеров: `python scripts/validate-ai-workflow.py`.
 
+(Шаги 4–5 — команды внутри вашего проекта после установки.)
+
 ## Что внутри
 
 | Каталог | Что это |
@@ -49,7 +55,7 @@ python usai-workflow/install.py --list       # список модулей
 | `core/` | Ядро (ставится всегда): `docs/ai-workflow/` — пайплайн, роутинг, этапы; `docs/features/README.md` — формат задач и `status.md`; `docs/adr/` + шаблоны артефактов; `scripts/` — new-task, backlog, verify (+ PowerShell-обёртки) |
 | `modules/adapter-claude/` | Адаптер Claude Code: `/feature` и команды этапов, субагенты ролей с уровнями моделей, PreToolUse-хук против широкого поиска по диску (94 оффлайн-теста) |
 | `modules/adapter-codex/` | Адаптер Codex: skill `$feature`, профили ролей `.codex/agents`, hook с той же policy (Windows-адаптер + тесты). Требует adapter-claude |
-| `install.py` | Движок установки — модулей не знает, читает их манифесты |
+| `bin/usai.js` | Движок установки (Node, без зависимостей) — модулей не знает, читает их манифесты |
 
 Суть процесса (подробно — `core/files/docs/ai-workflow/README.md`):
 
@@ -68,7 +74,7 @@ python usai-workflow/install.py --list       # список модулей
 
 ```
 modules/<id>/
-├── module.toml     # id, title, description, question, requires, seed
+├── module.json     # id, title, description, question, requires, seed
 └── files/          # зеркалит раскладку целевого проекта
 ```
 
@@ -78,9 +84,10 @@ modules/<id>/
 
 ## Дорожная карта
 
-Очередь задач — [docs/backlog.md](docs/backlog.md). Крупное: `install.py
-update`, stack-модули с ADR-пресетами, verify v2 (запуск проверок по классу
-изменённых файлов), CI, английская локализация ядра.
+Очередь задач — [docs/backlog.md](docs/backlog.md). Крупное: команда
+`update`, публикация в npm registry, stack-модули с ADR-пресетами, verify v2
+(запуск проверок по классу изменённых файлов), CI, английская локализация
+ядра.
 
 Язык артефактов — русский (осознанное решение проекта-источника; язык — слот
 `AGENTS.md`, самим документам локализация в планах).

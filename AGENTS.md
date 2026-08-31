@@ -7,10 +7,10 @@
 
 Переносимый AI workflow как продукт: контент процесса (`core/`, `modules/`)
 плюс установщик (`install.py`), который ставит его в целевые проекты.
-Репозиторий публичный. Legacy-системы нет. Runtime-кода, кроме Python-скриптов
-и POSIX-шеллов, нет — «backend/frontend» этапы пайплайна к задачам этого
-репозитория обычно неприменимы, маршруты почти всегда `doc`/`tech` размера
-F/S.
+Репозиторий публичный. Legacy-системы нет. Runtime-код — Node-установщик
+(`bin/usai.js`), Python-скрипты контента и POSIX-шеллы; «backend/frontend»
+этапы пайплайна к задачам этого репозитория обычно неприменимы, маршруты
+почти всегда `doc`/`tech` размера F/S.
 
 Особенность: workflow установлен сам на себя (dogfood). Документы процесса
 существуют в двух экземплярах:
@@ -20,7 +20,7 @@ F/S.
   (это процесс самого репозитория).
 
 Правишь процесс → правь **источник**, затем синхронизируй установленную
-копию: `python install.py --target . --all --yes --force` (seed-файлы —
+копию: `node bin/usai.js --target . --all --yes --force` (seed-файлы —
 `AGENTS.md`, `CLAUDE.md`, `docs/backlog.md`, `scripts/verify.config.sh` — при
 этом не трогаются, они проектные). Рассинхрон ловит `scripts/verify.sh`.
 
@@ -46,7 +46,7 @@ F/S.
 - **Standing approval** и **облегчённый docs-only-цикл** — как описано в
   `docs/ai-workflow/stages/s-route.md` («Облегчённый цикл»); для этого
   репозитория «docs-only» покрывает и `core/`, и `modules/` (контент —
-  это и есть продукт), но НЕ `install.py`.
+  это и есть продукт), но НЕ `bin/usai.js`.
 - Merge в `main` делает только человек: после `gate-3: approved` — запрос на
   merge по формату `docs/ai-workflow/stages/06-review-complete.md`, и стоп.
 - Не искать по всему диску: не начинай `find`/`grep -r`/рекурсивный обход с
@@ -59,9 +59,11 @@ F/S.
 
 ## Команды
 
-- `python install.py --list` — модули; `--dry-run` — план установки.
+- `node bin/usai.js --list` — модули; `--dry-run` — план установки
+  (в целевых проектах то же самое — `npx github:usai-s/usai-workflow`).
 - `scripts/verify.sh` (PowerShell: `scripts/verify.ps1`) — все проверки:
   синтаксис Python/shell, 94 оффлайн-теста хука, смоук установки во
   временный каталог, отсутствие рассинхрона источник ↔ установленная копия.
 - Тесты хука отдельно: `python .claude/hooks/tests/run_cases.py`.
-- Требования: Python ≥ 3.11, git; для shell-скриптов на Windows — Git Bash.
+- Требования: Node ≥ 18 (движок), Python ≥ 3.11 (хук, валидатор), git;
+  для shell-скриптов на Windows — Git Bash.

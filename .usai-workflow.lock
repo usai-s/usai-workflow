@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "modules": [
     "core",
     "adapter-claude",
@@ -7,15 +7,15 @@
   ],
   "files": {
     ".githooks/commit-msg": {
-      "sha256": "e44d1c5b0cf01b0c7bdbd8760947d99b0c592952124be045dc02a45a13876ab4",
+      "sha256": "f4ec97864e8eeceb392e54cbf9c4dcc92e8d8a3146dabc0a3016bead3d2ed2cb",
       "module": "core"
     },
     ".githooks/pre-commit": {
-      "sha256": "7c2f4abb69694c359645f154246525db68a13cbe0eb31fc034579be6b95e42a0",
+      "sha256": "e4eb7af4415202b1055e87014b678d22d496bdb22e88d7e2aa5c2fc3f8b4edec",
       "module": "core"
     },
     ".githooks/pre-push": {
-      "sha256": "719ce17eeaf14ba9701a3b50d89a7126514c4c757e9f4759daec6651537d089e",
+      "sha256": "36a545b9f4a622c46a1be8797269d98754f9c5d0644e68ef715320b0d8b6f553",
       "module": "core"
     },
     "docs/adr/README.md": {
@@ -27,7 +27,7 @@
       "module": "core"
     },
     "docs/ai-workflow/README.md": {
-      "sha256": "7e420c23c40c16edb96e11bea469720af5c25eeda020a94f9cf7576ed8a1250d",
+      "sha256": "a442557845f6fd79cddfdf54f585a170eeecee83fa8b9a23a281f798a4374142",
       "module": "core"
     },
     "docs/ai-workflow/routing.md": {
@@ -115,7 +115,7 @@
       "module": "core"
     },
     "scripts/validate-ai-workflow.py": {
-      "sha256": "5cecdabede0a37cb7b88977b10119fc8b3d6af12f18571ef577d514865289716",
+      "sha256": "f04a473fbcf111e22f50b901a6a3b2f82d68c207c652f5270067b741fb257a3a",
       "module": "core"
     },
     "scripts/verify.ps1": {
@@ -211,39 +211,39 @@
       "module": "adapter-claude"
     },
     ".agents/skills/feature/SKILL.md": {
-      "sha256": "d200e17d3f6fe19aaa8fd7fb703229b61e63c34cd2189d860ad0a7c9417816a0",
+      "sha256": "939728c5fd4cf839f76648a82725716a9921a113833378a3231458ba04bbd21a",
       "module": "adapter-codex"
     },
     ".codex/agents/backend-developer.toml": {
-      "sha256": "1bf6365af27d6c023bb3f05a54251f4131876003f0cf934fcb19ead102afe3fe",
+      "sha256": "1b111427f974396fecc830ab3838fd5bea01a45a3c90b24ad85217a3a9762596",
       "module": "adapter-codex"
     },
     ".codex/agents/business-analyst.toml": {
-      "sha256": "e7aee14db07f7691a716b7a81b44f1b3c19909891f8028e51ac4183a64d1a66c",
+      "sha256": "152ba2bbe6b2f462c62ef1a053d45cf1885669c720f964770d3a3ab8935405d2",
       "module": "adapter-codex"
     },
     ".codex/agents/code-reviewer.toml": {
-      "sha256": "6e4a1652af49cfdaf76af02710e834b3cf0400e04aacc3af8b820ee1b7c4e8cd",
+      "sha256": "548d7a8d815d80535c99b0e423598517cf967f90b5d47d6567ecac270170b16e",
       "module": "adapter-codex"
     },
     ".codex/agents/frontend-developer.toml": {
-      "sha256": "a3ccfea243250b082d9e8ccea3e45df991cc6357f6a0f361e63e06fe4ad9ba60",
+      "sha256": "6d3e8f14faa322f14201a68fc5d28d593607e69f8d124a2ffd78cd8016a4baa8",
       "module": "adapter-codex"
     },
     ".codex/agents/legacy-analyst.toml": {
-      "sha256": "c5284f5c834b687886c7ab8bb8d3bffe4aab8996350558d9644f6b8618eccc9b",
+      "sha256": "3729a82686a82f18f1c03ea4a50b970791f26b40c46158aa025cd36f9c001d46",
       "module": "adapter-codex"
     },
     ".codex/agents/qa-engineer.toml": {
-      "sha256": "fbd7df83fc0081f26ffebefcea84c7ee26ed6546110225151d5c6b59150762ef",
+      "sha256": "ea949e4b96bcf2d08d8c1b9c819a193b6516812e6962f613a9e958ebc77eb9d4",
       "module": "adapter-codex"
     },
     ".codex/agents/requirements-reviewer.toml": {
-      "sha256": "22d112ab400ded4e3f23b4b43ad78676f35b53a703d6f480672200d6c4696570",
+      "sha256": "76037271c796c7c40c09c89139e59e305b4f48519230f3a61d9660137fe7d990",
       "module": "adapter-codex"
     },
     ".codex/agents/ux-designer.toml": {
-      "sha256": "30c26a4173dc2e10496cb31d1df16183e4fb20e952979ed925d8abae2124646f",
+      "sha256": "f6e19fe04278418bad6673080d713060ecf1b19e439d7e40b6b69edaab1e0f0c",
       "module": "adapter-codex"
     },
     ".codex/config.toml": {
@@ -255,11 +255,11 @@
       "module": "adapter-codex"
     },
     ".codex/hooks/tests/run-cases.ps1": {
-      "sha256": "dbd2c66b0f72fdac8242c9133332a160a53149efe6c974d50a969bf512d54427",
+      "sha256": "72b355a6ee61350ec78867b78b49690242c7db0ac848c20b2192baa8a1f92432",
       "module": "adapter-codex"
     },
     ".codex/hooks.json": {
-      "sha256": "54eb2758ecd2b4d2929b8ff49955eebdea9fdd9b66f127f07fec0f97f9a01017",
+      "sha256": "9604eca3b7bdec29c32df4eac009592b49acae41e5e0e75484237fa6cdda74db",
       "module": "adapter-codex"
     }
   },

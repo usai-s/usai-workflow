@@ -1,0 +1,31 @@
+{
+  "name": "usai-workflow",
+  "version": "0.3.0",
+  "description": "Переносимый AI workflow для разработки через агентов: пайплайн с human gates, роутинг F/S/M/L, состояние в файлах. Устанавливается в проект модулями.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usai-s/usai-workflow.git"
+  },
+  "bin": {
+    "usai-workflow": "bin/usai.js"
+  },
+  "files": [
+    "bin/",
+    "core/",
+    "modules/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai",
+    "workflow",
+    "agents",
+    "claude-code",
+    "codex",
+    "scaffolding"
+  ]
+}
