@@ -1,0 +1,203 @@
+{
+  "version": "0.1.0",
+  "modules": [
+    "core",
+    "adapter-claude"
+  ],
+  "files": {
+    "docs/adr/README.md": {
+      "sha256": "a9351ce6d5872b13c0606b79fbea074d14b6e894f6ba2d163a1c65a28206f9f7",
+      "module": "core"
+    },
+    "docs/ai-workflow/feature.md": {
+      "sha256": "03591fafed5a5e71b17753c213957c07d4502382bd70a4597e9ee4fcaa345362",
+      "module": "core"
+    },
+    "docs/ai-workflow/README.md": {
+      "sha256": "73c5a0b478721d80edb306da0f7647bfe08a1ecd8084e76d7545a596fa87d427",
+      "module": "core"
+    },
+    "docs/ai-workflow/routing.md": {
+      "sha256": "e6dac0397e63a08b345d99c168bec00d980bce3fff0f9377422fa12eb9aa789b",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/00-legacy-analysis.md": {
+      "sha256": "e4fea022b071472a32b027294c463bbe55fc96dee56ae0a151ed8d5ff0eafe71",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/01-business-analysis.md": {
+      "sha256": "478ec3f39fbcef794ac8f0e1543c27701f687180f82d64122ff5121c486c049e",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/02-requirements-review.md": {
+      "sha256": "9934abbba4533233122fa94bce62c71ea84b90a0672d387da28bc9cd5c056acf",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/03-ux-design.md": {
+      "sha256": "64acf132a00ca81b4624069ec930efde257a26c27d37f5d64944fb7ba0ca480d",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/04-backend.md": {
+      "sha256": "7a1bccdda6d6f3291606a308e98b9c9a90b4b6e7d4f162ae3607723801d2ede3",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/05-frontend.md": {
+      "sha256": "a2b8405c1e93dca54450381b497c03e88b1fe89f91a42f344cf40992e15e293c",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/06-review-complete.md": {
+      "sha256": "df842bfd11ed53d87aa4e3b938f73f5b51e05410c8a2fb3cb232a119591f6d47",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/f-route.md": {
+      "sha256": "e06bb1d799240db4572d4729e54809654f3b588fc96e36d6971f42ee144d3504",
+      "module": "core"
+    },
+    "docs/ai-workflow/stages/s-route.md": {
+      "sha256": "2715609f94162cde5371bff4dc524f70d17aa26d16808236fdb515500012d2b6",
+      "module": "core"
+    },
+    "docs/features/README.md": {
+      "sha256": "539a3ebb1341632e94ea985f83b8f6128f183d066140927d54c9de09e9f32ac0",
+      "module": "core"
+    },
+    "docs/templates/adr.md": {
+      "sha256": "c6683298fc9988b5f4ccb5e903c56bf21ac4d44e8cea8b31a26c6afe95a76b75",
+      "module": "core"
+    },
+    "docs/templates/design-spec.md": {
+      "sha256": "fcb121de8d42d30cb33378476982e649298a53a6a3fb039a6e9768dca4554dc7",
+      "module": "core"
+    },
+    "docs/templates/feature-spec.md": {
+      "sha256": "1bc9fc6bb671853f0c293b321b6bbfcd8c955a50de9e74d4de76a33f87997903",
+      "module": "core"
+    },
+    "docs/templates/legacy-analysis.md": {
+      "sha256": "5727c888491749370e0e0477d647cda313fe8731449c5d108986063926e23022",
+      "module": "core"
+    },
+    "docs/templates/test-plan.md": {
+      "sha256": "06cf42591dea6c1191fac2138a32d1187edaa2f64ed907003a785db59871af68",
+      "module": "core"
+    },
+    "scripts/backlog.ps1": {
+      "sha256": "81704b29310cf62531cff885e15816fe9724bb5b116d62698bea8bea1678e4f2",
+      "module": "core"
+    },
+    "scripts/backlog.sh": {
+      "sha256": "04ee8ba2f7c61515c8e18c70e48f71bdfeb45023a2ec36d64fa006887d0394c2",
+      "module": "core"
+    },
+    "scripts/invoke-sh.ps1": {
+      "sha256": "7bf88c34f2c316f73a1b84b32c004667cd38bb3530b97672b2facd45b28b5742",
+      "module": "core"
+    },
+    "scripts/new-task.ps1": {
+      "sha256": "205be322ae486b94f0af9ac868a346736b4f13cc43359a1db88d7dd3dc8d07f0",
+      "module": "core"
+    },
+    "scripts/new-task.sh": {
+      "sha256": "65d7e6500be97ddc20a1bbbf5dd12c9a5e412210fe6c50532bd4377eea62a210",
+      "module": "core"
+    },
+    "scripts/verify.ps1": {
+      "sha256": "91498eec5a500fc97a05471ef433757f110ce3a7ccd8be68322cb9dbd580ff87",
+      "module": "core"
+    },
+    "scripts/verify.sh": {
+      "sha256": "6c9c2455bd395526d26c3545d216fd2f929e9566cf8abe90e7a83a1c23bbd54b",
+      "module": "core"
+    },
+    ".claude/agents/backend-developer.md": {
+      "sha256": "415fa790abf4062d7eb86fc195ac9c7d1985d70a682fa92d2e2f296a70e5bd22",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/business-analyst.md": {
+      "sha256": "a8b960814a9334a98f5d8e1454b7cc271ba63549066496eea4ce07201d2575ef",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/code-reviewer.md": {
+      "sha256": "89b5a0f962dadeba8ddc27cd18a33f92eb7ba9a2505707c392cd96397bec1fff",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/frontend-developer.md": {
+      "sha256": "4530987b5757273a095dbf119277f9ca6878eed140d33fc9327b8ae40cbb8a18",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/legacy-analyst.md": {
+      "sha256": "1eaf1729561b97d9c01ccf7be118e53fa91a49f0ca4841857ce30b9832ad6ebc",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/qa-engineer.md": {
+      "sha256": "b9690528ecec15f60dca8afd43d33d07fc3b0b86a43bd88e0e1e9388b44e7423",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/requirements-reviewer.md": {
+      "sha256": "c263d27019c8c23b4830860825411e85c88649299b20eb622fed703c57bc8bbb",
+      "module": "adapter-claude"
+    },
+    ".claude/agents/ux-designer.md": {
+      "sha256": "1c5a6729b71e38b16901a868298885ec7476d2b2ddb87bdd9908e6aee35bf5f6",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/analyze.md": {
+      "sha256": "e7daa78284fc69f0b2321cd0abd966ed715e0852c7f876a91a3d2191f2264219",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/design.md": {
+      "sha256": "86628813591b90bbdd5da51ef15c7d43eb07bd34427d2fa47db822586abdc3e5",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/dev-backend.md": {
+      "sha256": "f6f9f07a30918b9335e498f23e6acb8fb706720ea836d2bbf05c292d30f51f8c",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/dev-frontend.md": {
+      "sha256": "39baf27cfca7b47211dd8613aa271253f34cd475e4e0431ffe91bdb34a2ab715",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/feature.md": {
+      "sha256": "f2369fd9f33ca9284ed30731b52b5ea3e605bbe415b1e2b585e77a92bc28034d",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/qa.md": {
+      "sha256": "f4563854eec7e71eea7f25a346d8f96cc3c7a032a46a26dc555ed6f7400da2c4",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/review-requirements.md": {
+      "sha256": "b3db99b56943436f0aa7d0079b0fa334197b597ca9cba7ae563cab2e494a75b6",
+      "module": "adapter-claude"
+    },
+    ".claude/commands/ship.md": {
+      "sha256": "4fc1e330fc6db3122bd6122418825c8ef7abec46ac1b1962fb9e41771acb155b",
+      "module": "adapter-claude"
+    },
+    ".claude/hooks/block_wide_fs_search.py": {
+      "sha256": "7fe3f52f7ab2754c76843004e808eb506493cd0f927a7f0a89d55585949fc7bc",
+      "module": "adapter-claude"
+    },
+    ".claude/hooks/README.md": {
+      "sha256": "eb6a443729efc3d28cb6a8a8f9d9559731ee0877f17629dd042ffa03550e0c69",
+      "module": "adapter-claude"
+    },
+    ".claude/hooks/tests/cases.tsv": {
+      "sha256": "3d49ae4885f714f7029754faebbaf232b14c4083976c59af8c5e253e634acd94",
+      "module": "adapter-claude"
+    },
+    ".claude/hooks/tests/run_cases.py": {
+      "sha256": "daf1a8272d5d3be6fce4cc5a2a12ab84743db3387d0632845b37f892452ed29c",
+      "module": "adapter-claude"
+    },
+    ".claude/settings.json": {
+      "sha256": "8b6750f719f231af1812dd4e2fa3ec8cf4233d5c31efdbda94cfaa272d9b7110",
+      "module": "adapter-claude"
+    }
+  },
+  "seeds": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "docs/backlog.md",
+    "scripts/verify.config.sh"
+  ]
+}
