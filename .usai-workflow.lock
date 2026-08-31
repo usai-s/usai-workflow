@@ -1,28 +1,41 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "modules": [
     "core",
-    "adapter-claude"
+    "adapter-claude",
+    "adapter-codex"
   ],
   "files": {
+    ".githooks/commit-msg": {
+      "sha256": "e44d1c5b0cf01b0c7bdbd8760947d99b0c592952124be045dc02a45a13876ab4",
+      "module": "core"
+    },
+    ".githooks/pre-commit": {
+      "sha256": "7c2f4abb69694c359645f154246525db68a13cbe0eb31fc034579be6b95e42a0",
+      "module": "core"
+    },
+    ".githooks/pre-push": {
+      "sha256": "719ce17eeaf14ba9701a3b50d89a7126514c4c757e9f4759daec6651537d089e",
+      "module": "core"
+    },
     "docs/adr/README.md": {
-      "sha256": "a9351ce6d5872b13c0606b79fbea074d14b6e894f6ba2d163a1c65a28206f9f7",
+      "sha256": "70018e2d3729f11190ca839f2f2dee83fd12a073f0110cdec50604758fc2aac1",
       "module": "core"
     },
     "docs/ai-workflow/feature.md": {
-      "sha256": "03591fafed5a5e71b17753c213957c07d4502382bd70a4597e9ee4fcaa345362",
+      "sha256": "621ecc2032cec58ea5697affa92d7ae9545c979510c341076f877d7e0c0f0dd0",
       "module": "core"
     },
     "docs/ai-workflow/README.md": {
-      "sha256": "73c5a0b478721d80edb306da0f7647bfe08a1ecd8084e76d7545a596fa87d427",
+      "sha256": "7e420c23c40c16edb96e11bea469720af5c25eeda020a94f9cf7576ed8a1250d",
       "module": "core"
     },
     "docs/ai-workflow/routing.md": {
-      "sha256": "e6dac0397e63a08b345d99c168bec00d980bce3fff0f9377422fa12eb9aa789b",
+      "sha256": "9d23bc755c25be6e43868b10ea1ded8adf5d8f8d3f78ed992ef9ff7ead0bbf40",
       "module": "core"
     },
     "docs/ai-workflow/stages/00-legacy-analysis.md": {
-      "sha256": "e4fea022b071472a32b027294c463bbe55fc96dee56ae0a151ed8d5ff0eafe71",
+      "sha256": "11ec730d0b8a5e2306b312625cc006ac49325d36f79d5a1382c9ec479d5d8cff",
       "module": "core"
     },
     "docs/ai-workflow/stages/01-business-analysis.md": {
@@ -34,31 +47,31 @@
       "module": "core"
     },
     "docs/ai-workflow/stages/03-ux-design.md": {
-      "sha256": "64acf132a00ca81b4624069ec930efde257a26c27d37f5d64944fb7ba0ca480d",
+      "sha256": "3693c2272ba2c4d36b4a58ad425bc226e3b2d6db7f8e12e4ecf2d09ca4ed5893",
       "module": "core"
     },
     "docs/ai-workflow/stages/04-backend.md": {
-      "sha256": "7a1bccdda6d6f3291606a308e98b9c9a90b4b6e7d4f162ae3607723801d2ede3",
+      "sha256": "764d32ff5739acfebd923fd21c76d911f64f36f44837a38c3aeb4dfcaeb46081",
       "module": "core"
     },
     "docs/ai-workflow/stages/05-frontend.md": {
-      "sha256": "a2b8405c1e93dca54450381b497c03e88b1fe89f91a42f344cf40992e15e293c",
+      "sha256": "438ddf7af2d114272bcd1e6c32170f05f8f6b28c5f64e92ba3a99cc4bc65268b",
       "module": "core"
     },
     "docs/ai-workflow/stages/06-review-complete.md": {
-      "sha256": "df842bfd11ed53d87aa4e3b938f73f5b51e05410c8a2fb3cb232a119591f6d47",
+      "sha256": "f7cf60ec511b0ccf09cf183b658a6800915d6ffbf7b61662d8d90e7f2e7c1a91",
       "module": "core"
     },
     "docs/ai-workflow/stages/f-route.md": {
-      "sha256": "e06bb1d799240db4572d4729e54809654f3b588fc96e36d6971f42ee144d3504",
+      "sha256": "329684438687c310e8cf80364bcd99ad2f67f447bc35592a034f91f53e9e5e53",
       "module": "core"
     },
     "docs/ai-workflow/stages/s-route.md": {
-      "sha256": "2715609f94162cde5371bff4dc524f70d17aa26d16808236fdb515500012d2b6",
+      "sha256": "16eee678d43ca4d8097361936cbe094cf7e6964192f739b547816ff87dd89e8c",
       "module": "core"
     },
     "docs/features/README.md": {
-      "sha256": "539a3ebb1341632e94ea985f83b8f6128f183d066140927d54c9de09e9f32ac0",
+      "sha256": "415a683237af1dfc4773c5d16931ae638e1bc12fc4124ac4008eaaf0c09a5978",
       "module": "core"
     },
     "docs/templates/adr.md": {
@@ -66,7 +79,7 @@
       "module": "core"
     },
     "docs/templates/design-spec.md": {
-      "sha256": "fcb121de8d42d30cb33378476982e649298a53a6a3fb039a6e9768dca4554dc7",
+      "sha256": "cc42c8d9dc52f89d8312548ed1c07c50fd694b1f0bb942ef9d68bf17f7051eb1",
       "module": "core"
     },
     "docs/templates/feature-spec.md": {
@@ -74,7 +87,7 @@
       "module": "core"
     },
     "docs/templates/legacy-analysis.md": {
-      "sha256": "5727c888491749370e0e0477d647cda313fe8731449c5d108986063926e23022",
+      "sha256": "a23e3d0d91864efea3cd26a8de71e92c097ea4064a1b0f17c42c805c78372ee1",
       "module": "core"
     },
     "docs/templates/test-plan.md": {
@@ -86,7 +99,7 @@
       "module": "core"
     },
     "scripts/backlog.sh": {
-      "sha256": "04ee8ba2f7c61515c8e18c70e48f71bdfeb45023a2ec36d64fa006887d0394c2",
+      "sha256": "0c0fb8ad8c80c5dfddc26af88b91806aa165d4c0ad03e51443ef036c74780163",
       "module": "core"
     },
     "scripts/invoke-sh.ps1": {
@@ -98,7 +111,11 @@
       "module": "core"
     },
     "scripts/new-task.sh": {
-      "sha256": "65d7e6500be97ddc20a1bbbf5dd12c9a5e412210fe6c50532bd4377eea62a210",
+      "sha256": "05865e6bfe509f8e2f46b004420e3a3df8c97b137b0190550377c3da521da5bf",
+      "module": "core"
+    },
+    "scripts/validate-ai-workflow.py": {
+      "sha256": "5cecdabede0a37cb7b88977b10119fc8b3d6af12f18571ef577d514865289716",
       "module": "core"
     },
     "scripts/verify.ps1": {
@@ -106,15 +123,15 @@
       "module": "core"
     },
     "scripts/verify.sh": {
-      "sha256": "6c9c2455bd395526d26c3545d216fd2f929e9566cf8abe90e7a83a1c23bbd54b",
+      "sha256": "2a0490f55e5d2b4bd2ac341c7166acaed561d4cf193e2fdd467d588a0c2b508e",
       "module": "core"
     },
     ".claude/agents/backend-developer.md": {
-      "sha256": "415fa790abf4062d7eb86fc195ac9c7d1985d70a682fa92d2e2f296a70e5bd22",
+      "sha256": "56102137252e60b12088176bdea56deb37a29052c0f5b5b1317756be4bf179aa",
       "module": "adapter-claude"
     },
     ".claude/agents/business-analyst.md": {
-      "sha256": "a8b960814a9334a98f5d8e1454b7cc271ba63549066496eea4ce07201d2575ef",
+      "sha256": "df088f66ee6d029d9c76c4e023f76620926aa7e863adbecef938c87fdadf9666",
       "module": "adapter-claude"
     },
     ".claude/agents/code-reviewer.md": {
@@ -122,15 +139,15 @@
       "module": "adapter-claude"
     },
     ".claude/agents/frontend-developer.md": {
-      "sha256": "4530987b5757273a095dbf119277f9ca6878eed140d33fc9327b8ae40cbb8a18",
+      "sha256": "ede96d7ebed2f11a4dcb0f1404227aea5a6df56437db3dbdf78ee9aa824b0329",
       "module": "adapter-claude"
     },
     ".claude/agents/legacy-analyst.md": {
-      "sha256": "1eaf1729561b97d9c01ccf7be118e53fa91a49f0ca4841857ce30b9832ad6ebc",
+      "sha256": "b0b1edb9315071c4a3a22e1899a7a45f427a352657c69db3352daa240ee9f761",
       "module": "adapter-claude"
     },
     ".claude/agents/qa-engineer.md": {
-      "sha256": "b9690528ecec15f60dca8afd43d33d07fc3b0b86a43bd88e0e1e9388b44e7423",
+      "sha256": "d1b017c0e2384c1ee0a966401b2a6933bf15cff862b0661ef48e8eef9ef9788d",
       "module": "adapter-claude"
     },
     ".claude/agents/requirements-reviewer.md": {
@@ -138,7 +155,7 @@
       "module": "adapter-claude"
     },
     ".claude/agents/ux-designer.md": {
-      "sha256": "1c5a6729b71e38b16901a868298885ec7476d2b2ddb87bdd9908e6aee35bf5f6",
+      "sha256": "b245daa4f8e39ed446d868bde63031b73f0454c91180c09cd26fe3280d3fad18",
       "module": "adapter-claude"
     },
     ".claude/commands/analyze.md": {
@@ -158,7 +175,7 @@
       "module": "adapter-claude"
     },
     ".claude/commands/feature.md": {
-      "sha256": "f2369fd9f33ca9284ed30731b52b5ea3e605bbe415b1e2b585e77a92bc28034d",
+      "sha256": "c2b91a06b18c40f28457406281cf2775a84ce0dee6f13eb6b46bb710fdc20d9e",
       "module": "adapter-claude"
     },
     ".claude/commands/qa.md": {
@@ -174,30 +191,85 @@
       "module": "adapter-claude"
     },
     ".claude/hooks/block_wide_fs_search.py": {
-      "sha256": "7fe3f52f7ab2754c76843004e808eb506493cd0f927a7f0a89d55585949fc7bc",
+      "sha256": "b25b21ae9002111170d9aa837cf6c24d847ac1056dd785350acbcd74c7346c06",
       "module": "adapter-claude"
     },
     ".claude/hooks/README.md": {
-      "sha256": "eb6a443729efc3d28cb6a8a8f9d9559731ee0877f17629dd042ffa03550e0c69",
+      "sha256": "2fc16cf4f349f61baad4036600de3364d64bac0ceb31c485a019cc7d3540fa51",
       "module": "adapter-claude"
     },
     ".claude/hooks/tests/cases.tsv": {
-      "sha256": "3d49ae4885f714f7029754faebbaf232b14c4083976c59af8c5e253e634acd94",
+      "sha256": "23e65ba4e31833b7654e9271e2a96db42c49841c6b1705e63bbeb733fa6477c4",
       "module": "adapter-claude"
     },
     ".claude/hooks/tests/run_cases.py": {
-      "sha256": "daf1a8272d5d3be6fce4cc5a2a12ab84743db3387d0632845b37f892452ed29c",
+      "sha256": "da185154b50efb20263408c2e55814655266a6f32ca23a6c22cded3cf2133d4b",
       "module": "adapter-claude"
     },
     ".claude/settings.json": {
       "sha256": "8b6750f719f231af1812dd4e2fa3ec8cf4233d5c31efdbda94cfaa272d9b7110",
       "module": "adapter-claude"
+    },
+    ".agents/skills/feature/SKILL.md": {
+      "sha256": "d200e17d3f6fe19aaa8fd7fb703229b61e63c34cd2189d860ad0a7c9417816a0",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/backend-developer.toml": {
+      "sha256": "1bf6365af27d6c023bb3f05a54251f4131876003f0cf934fcb19ead102afe3fe",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/business-analyst.toml": {
+      "sha256": "e7aee14db07f7691a716b7a81b44f1b3c19909891f8028e51ac4183a64d1a66c",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/code-reviewer.toml": {
+      "sha256": "6e4a1652af49cfdaf76af02710e834b3cf0400e04aacc3af8b820ee1b7c4e8cd",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/frontend-developer.toml": {
+      "sha256": "a3ccfea243250b082d9e8ccea3e45df991cc6357f6a0f361e63e06fe4ad9ba60",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/legacy-analyst.toml": {
+      "sha256": "c5284f5c834b687886c7ab8bb8d3bffe4aab8996350558d9644f6b8618eccc9b",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/qa-engineer.toml": {
+      "sha256": "fbd7df83fc0081f26ffebefcea84c7ee26ed6546110225151d5c6b59150762ef",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/requirements-reviewer.toml": {
+      "sha256": "22d112ab400ded4e3f23b4b43ad78676f35b53a703d6f480672200d6c4696570",
+      "module": "adapter-codex"
+    },
+    ".codex/agents/ux-designer.toml": {
+      "sha256": "30c26a4173dc2e10496cb31d1df16183e4fb20e952979ed925d8abae2124646f",
+      "module": "adapter-codex"
+    },
+    ".codex/config.toml": {
+      "sha256": "901880593b9b37edf53eb82f0e9fcf1d3e17d283081d17a8585b78981ba6c83e",
+      "module": "adapter-codex"
+    },
+    ".codex/hooks/run-pre-tool-use.ps1": {
+      "sha256": "b71be2888c7752365f336ffad3b5f4aeff0e3cda96352a44b11183d50bea0794",
+      "module": "adapter-codex"
+    },
+    ".codex/hooks/tests/run-cases.ps1": {
+      "sha256": "dbd2c66b0f72fdac8242c9133332a160a53149efe6c974d50a969bf512d54427",
+      "module": "adapter-codex"
+    },
+    ".codex/hooks.json": {
+      "sha256": "54eb2758ecd2b4d2929b8ff49955eebdea9fdd9b66f127f07fec0f97f9a01017",
+      "module": "adapter-codex"
     }
   },
   "seeds": [
     "AGENTS.md",
     "CLAUDE.md",
     "docs/backlog.md",
+    "docs/conventions/backend.md",
+    "docs/conventions/frontend.md",
+    "docs/conventions/git.md",
     "scripts/verify.config.sh"
   ]
 }

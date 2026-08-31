@@ -1,0 +1,27 @@
+#!/bin/sh
+# Проверка перед push — единым входом `scripts/verify.sh`.
+#
+# Раньше здесь был фиксированный список тест-проектов. Он расходился с тем,
+# что требует Definition of Done этапов, и не умел главного: правка README
+# запускала сборку, а изменение Directory.Packages.props могло проехать без
+# неё, если список не обновили. verify.sh выбирает проверки по классу
+# изменённых файлов, поэтому хук и DoD теперь говорят об одном и том же.
+
+set -eu
+
+repo=$(git rev-parse --show-toplevel)
+verify="$repo/scripts/verify.sh"
+
+if [ ! -f "$verify" ]; then
+    printf '[pre-push] scripts/verify.sh не найден — проверка пропущена.\n' >&2
+    exit 0
+fi
+
+printf '[pre-push] scripts/verify.sh\n'
+
+if ! (cd "$repo" && sh "$verify"); then
+    printf '\n[pre-push] Проверка не прошла — push остановлен.\n\n' >&2
+    exit 1
+fi
+
+exit 0

@@ -1,0 +1,8 @@
+name = "backend-developer"
+description = "Реализует backend вместе с контрактом и тестами этапа 4."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = """
+Работай только как backend-разработчик этого проекта. Прочитай AGENTS.md, docs/ai-workflow/stages/04-backend.md и docs/conventions/backend.md. Сначала план и api-contract, затем минимальная реализация и тесты. Не меняй контракт молча. Пиши только назначенную backend-зону; корневые файлы решения (*.sln, Directory.*.props и т.п.), status.md и backlog меняет оркестратор по твоему запросу.
+"""

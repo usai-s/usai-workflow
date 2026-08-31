@@ -1,0 +1,71 @@
+#!/bin/sh
+# Проверки перед коммитом. Без зависимостей: обычный POSIX sh, который есть
+# и в Git Bash на Windows, и в CI. Ставится через core.hooksPath — см.
+# docs/conventions/git.md.
+#
+# Это быстрая обратная связь, а не защита: `git commit --no-verify` снимает
+# все проверки. Настоящий барьер появится вместе с CI и protection на main.
+
+set -eu
+
+fail() {
+    printf '\n[pre-commit] %s\n\n' "$1" >&2
+    exit 1
+}
+
+branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo 'DETACHED')
+git_dir=$(git rev-parse --git-dir)
+
+# Влитие подготовленной ветки — единственный санкционированный способ, которым
+# работа попадает в main, и он делается человеком. Проверки ветки к нему не
+# применимы; проверки содержимого ниже — применимы и остаются.
+merging=0
+if [ -f "$git_dir/SQUASH_MSG" ] || [ -f "$git_dir/MERGE_HEAD" ]; then
+    merging=1
+fi
+
+# Правка очереди — исключение: docs/backlog.md по решению человека живёт в
+# main (очередь наполняется там до начала работ), поэтому коммит, меняющий
+# ТОЛЬКО этот файл, в main разрешён. До этого исключения сессии обходили хук
+# через --no-verify, что хуже: обход снимает и проверки содержимого.
+backlog_only=0
+if [ "$(git diff --cached --name-only)" = 'docs/backlog.md' ]; then
+    backlog_only=1
+fi
+
+# --- 1. Не коммитить в main ---------------------------------------------------
+if [ "$merging" -eq 0 ] && [ "$backlog_only" -eq 0 ] && { [ "$branch" = 'main' ] || [ "$branch" = 'master' ]; }; then
+    fail "Коммит в '$branch' запрещён. Заведи ветку задачи: git switch -c feat/001-slug
+Исключения: squash-merge подготовленной ветки; коммит, меняющий только docs/backlog.md (очередь)."
+fi
+
+# --- 2. Имя ветки по формату <префикс>/<NNN>-<slug> ---------------------------
+if [ "$merging" -eq 0 ] && [ "$backlog_only" -eq 0 ] && [ "$branch" != 'DETACHED' ]; then
+    if ! printf '%s' "$branch" | grep -Eq '^(feat|bug|hot|tech|mod|doc)/[0-9]{3}-[a-z0-9]+(-[a-z0-9]+)*$'; then
+        fail "Имя ветки '$branch' не по формату <префикс>/<NNN>-<slug>.
+Префиксы: feat, bug, hot, tech, mod, doc. Пример: bug/014-price-rounding
+Правила: docs/features/README.md"
+    fi
+fi
+
+# --- 3. Секреты и мусор в индексе ---------------------------------------------
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+
+for file in $staged; do
+    case "$file" in
+        *.env|.env.*|*/.env|*.pem|*.pfx|*.p12|*.key|*id_rsa*|*secrets.json|*.sql.gz|*.dump)
+            fail "В индексе '$file' — похоже на секрет или дамп.
+Секреты только через переменные окружения / secret-хранилища (AGENTS.md)."
+            ;;
+    esac
+done
+
+# --- 4. Маркеры конфликта -----------------------------------------------------
+for file in $staged; do
+    [ -f "$file" ] || continue
+    if grep -Eq '^(<<<<<<< |>>>>>>> )' "$file" 2>/dev/null; then
+        fail "В '$file' остались маркеры конфликта слияния."
+    fi
+done
+
+exit 0

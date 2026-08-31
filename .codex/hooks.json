@@ -1,0 +1,19 @@
+{
+  "description": "Project guardrails shared with Claude Code.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.claude/hooks/block_wide_fs_search.py\"",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"$payload = [Console]::In.ReadToEnd(); $script = Join-Path (git rev-parse --show-toplevel) '.codex/hooks/run-pre-tool-use.ps1'; $payload | powershell.exe -NoProfile -ExecutionPolicy Bypass -File $script; exit $LASTEXITCODE\"",
+            "timeout": 30,
+            "statusMessage": "Проверка границ файлового поиска"
+          }
+        ]
+      }
+    ]
+  }
+}

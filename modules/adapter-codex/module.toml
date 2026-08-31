@@ -1,0 +1,8 @@
+id = "adapter-codex"
+title = "Адаптер Codex"
+description = "Skill $feature (.agents/skills), профили ролей .codex/agents с моделями и sandbox-режимами, hook против широкого поиска (общая policy с Claude Code) + Windows-адаптер."
+question = "Установить адаптер Codex (.codex/, .agents/)?"
+# Windows-адаптер хука и hooks.json вызывают общую policy
+# .claude/hooks/block_wide_fs_search.py из модуля adapter-claude.
+requires = ["adapter-claude"]
+seed = []
