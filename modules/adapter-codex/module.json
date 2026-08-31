@@ -1,0 +1,10 @@
+{
+  "id": "adapter-codex",
+  "title": "Адаптер Codex",
+  "description": "Skill $feature (.agents/skills), профили ролей .codex/agents с моделями и sandbox-режимами, hook против широкого поиска (общая policy с Claude Code) + Windows-адаптер.",
+  "question": "Установить адаптер Codex (.codex/, .agents/)?",
+  "requires": [
+    "adapter-claude"
+  ],
+  "seed": []
+}

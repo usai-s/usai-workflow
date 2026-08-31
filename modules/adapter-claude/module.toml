@@ -1,8 +1,0 @@
-id = "adapter-claude"
-title = "Адаптер Claude Code"
-description = "Команда /feature и команды этапов, субагенты ролей (.claude/agents), PreToolUse-хук против широкого поиска по диску, settings.json."
-question = "Установить адаптер Claude Code (.claude/)?"
-requires = []
-seed = [
-  "CLAUDE.md",
-]

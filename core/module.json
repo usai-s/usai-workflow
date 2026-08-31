@@ -1,0 +1,15 @@
+{
+  "id": "core",
+  "title": "Ядро AI workflow",
+  "description": "Пайплайн, роутинг F/S/M/L, human gates, status.md, шаблоны артефактов, git-хуки, скрипты new-task/backlog/verify/validate. Ставится всегда.",
+  "always": true,
+  "requires": [],
+  "seed": [
+    "AGENTS.md",
+    "docs/backlog.md",
+    "docs/conventions/git.md",
+    "docs/conventions/backend.md",
+    "docs/conventions/frontend.md",
+    "scripts/verify.config.sh"
+  ]
+}

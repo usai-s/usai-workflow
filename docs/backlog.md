@@ -17,7 +17,8 @@
 ## Очередь
 
 - [ ] tech-NNN-install-update-command — команда `update`: пересинхронизация файлов ядра по lock-файлу, отчёт что изменилось · epic:installer · size:M · deps:- · note:главный недостающий кусок жизненного цикла
-- [ ] tech-NNN-installer-tests — автотесты install.py: конфликты, seed, requires, lock; прогон в CI · epic:installer · size:S · deps:- · note:сейчас движок проверяется только смоуком в verify
+- [ ] tech-NNN-npm-publish — публикация пакета в npm registry: npm-аккаунт человека, provenance, инструкция релиза (тег + npm publish) · epic:installer · size:S · deps:- · note:пока установка идёт через npx github:
+- [ ] tech-NNN-installer-tests — автотесты bin/usai.js: конфликты, seed, requires, lock; прогон в CI · epic:installer · size:S · deps:- · note:сейчас движок проверяется только смоуком в verify
 - [ ] tech-NNN-verify-v2-diff-routing — verify v2: классификация изменённых файлов и запуск только осмысленных проверок (движок в проекте-источнике) · epic:core · size:M · deps:- · note:убирает главное расхождение с исходным workflow
 - [ ] tech-NNN-ci-github-actions — CI: workflow GitHub Actions, гоняющий scripts/verify.sh на PR · epic:ops · size:S · deps:- · note:сейчас зелёность держится на pre-push и дисциплине
 - [ ] tech-NNN-branch-protection — защита main на GitHub: squash-only, обязательный PR и зелёный CI, автоудаление веток · epic:ops · size:F · deps:tech-NNN-ci-github-actions · note:PR #1 был влит merge-коммитом — конвенция требует squash
